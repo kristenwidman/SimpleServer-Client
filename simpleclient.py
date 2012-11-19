@@ -12,7 +12,9 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((HOST,PORT))
 
 data = 'this is a string. casing is important. maybe.\n'
+i = 0
 s.sendall(data)
+s.shutdown(socket.SHUT_WR)
 received = ''
 while True:
     print 'receiving data'

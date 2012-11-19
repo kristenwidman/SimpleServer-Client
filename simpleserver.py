@@ -21,7 +21,8 @@ while True:
     print 'Connected to',str(sock_remote)
     print 'Socket connects',conn.getsockname(),'to remote',conn.getpeername()
     new = conn.recv(5)
-    if '\n' in new: #why does 'if not new:' not work here?
+    #if '\n' in new:
+    if not new:
         break
     data += new
 print 'Data received:',data
